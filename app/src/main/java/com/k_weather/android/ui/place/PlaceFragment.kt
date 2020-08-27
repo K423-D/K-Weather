@@ -1,6 +1,7 @@
 package com.k_weather.android.ui.place
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ class PlaceFragment : Fragment() {
     private val viewModel by lazy { ViewModelProvider(this).get(PLaceViewModel::class.java) }
 
     private lateinit var adapter: PlaceAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +40,16 @@ class PlaceFragment : Fragment() {
         searchPlaceEdit.addTextChangedListener { editable: Editable? ->
             val content = editable.toString()
             if (content.isNotEmpty()) {
+                println("获取到的text：${searchPlaceEdit.text}")
+
+//                延迟执行
+//                Handler().postDelayed(
+//                    {
+//                        if (searchPlaceEdit.text != null) {
+//                        }
+//                    }, 1000
+//                )
+
                 viewModel.searchPlaces(content)
             } else {
                 recyclerView.visibility = View.GONE

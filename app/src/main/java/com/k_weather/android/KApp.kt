@@ -19,6 +19,9 @@ class KApp : Application() {
     }
 }
 
+/**
+ * 字符串上定义扩展函数，直接弹出 Toast
+ */
 fun String.showToast() {
     Toast.makeText(KApp.context, this, Toast.LENGTH_SHORT).show()
 }

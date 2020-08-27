@@ -17,7 +17,7 @@
         android:layout_height="60dp"
         android:background="@color/colorPrimary">
 
-        <EditText
+        <com.k_weather.android.ui.components.ClearableEditText
             android:id="@+id/searchPlaceEdit"
             android:layout_width="match_parent"
             android:layout_height="40dp"
